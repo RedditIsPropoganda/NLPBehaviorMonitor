@@ -1,0 +1,43 @@
+# Model Configuration
+model:
+  text_model_name: 'bert-base-uncased'
+  num_labels: 2
+  max_length: 512
+  dropout: 0.3
+
+# Training Configuration
+training:
+  batch_size: 32
+  num_epochs: 10
+  learning_rate: 2e-5
+  warmup_steps: 500
+
+# Reddit API Configuration
+# IMPORTANT: Replace these placeholder values with your actual Reddit API credentials
+# Do not commit your real credentials to the repository
+reddit:
+  client_id: 'YOUR_CLIENT_ID_HERE'
+  client_secret: 'YOUR_CLIENT_SECRET_HERE'
+  user_agent: 'YOUR_USER_AGENT_HERE (by /u/YOUR_REDDIT_USERNAME)'
+  subreddits:
+    - 'AskReddit'
+    - 'worldnews'
+    - 'funny'
+    - 'gaming'
+    - 'aww'
+  posts_per_subreddit: 100
+
+# Data Processing
+data:
+  train_split: 0.8
+
+# Logging
+logging:
+  level: 'INFO'
+
+# Weights & Biases
+wandb:
+  project: 'reddit-behavioral-detection'
+
+# Note: Ensure you have updated the Reddit API credentials before running the program
+# For more information on obtaining Reddit API credentials, visit: https://www.reddit.com/prefs/apps
